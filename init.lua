@@ -69,6 +69,7 @@ function GrenadeSuck.on_trigger(position)
 	local objects = minetest.get_objects_inside_radius(position, radius)
 	for _, object in pairs(objects) do
 		local suck = vector.distance(position, object:get_pos())
+		suck = radius - suck
 		suck = suck / radius
 		suck = suck * max_suck
 
